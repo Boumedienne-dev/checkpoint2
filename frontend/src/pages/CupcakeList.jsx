@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Cupcake from "../components/Cupcake";
 import axios from "axios";
+import Cupcake from "../components/Cupcake";
 
 export default function CupcakeList() {
   // Step 1: get all cupcakes
@@ -63,7 +63,7 @@ export default function CupcakeList() {
                 !accessoryFilter || cupcake.accessory_id === accessoryFilter
             )
             .map((cupcake) => (
-              <Link to={`/cupcakes/${cupcake.id}`}>
+              <Link to={`/cupcakes/${cupcake.id}`} key={cupcake.id}>
                 <li className="cupcake-item">
                   <Cupcake key={cupcake.id} cupcake={cupcake} />
                 </li>
